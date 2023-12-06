@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react'; 
+import {useState} from 'react'; 
 import Container from '@mui/material/Container';
 import { Typography } from '@mui/material';
  import {TextField} from "@mui/material"; 
@@ -15,17 +15,10 @@ import { Typography } from '@mui/material';
     email: '',
   });
 
-  const formDataLocal = localStorage.getItem('formData');
-
-  useEffect(() => {
-    if (formDataLocal !== null) {
-      navigate('/home');
-    }
-  }, [formDataLocal, navigate]);
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    localStorage.setItem('formData', JSON.stringify(formData));
+    sessionStorage.setItem('formData', JSON.stringify(formData));
     navigate('/home');
   };
 

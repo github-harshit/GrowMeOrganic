@@ -8,7 +8,7 @@ import Swal from 'sweetalert2'
 const Home: React.FC = () => {
      const navigate = useNavigate(); 
      const [userData, setUserData] = useState<User[]>([]); 
-     const formData = localStorage.getItem("formData"); 
+     const formData = sessionStorage.getItem("formData"); 
     
     useEffect(()=>{
       if(formData===null){ 
